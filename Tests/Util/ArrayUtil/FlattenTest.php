@@ -76,22 +76,11 @@ class FlattenTest extends \PHPUnit_Framework_TestCase
 	public function testFlattensNumericArrayWithIndexZeroAsMultidimensionalArray()
 	{
 		$testArray = array(
-			0 => array(
+			array(
 				'foo',
 				array('bar','moon'),
 			),
-			1 => 'bar',
-		);
-
-		// this assertion whilst not required, it shows the result of the funciton when the bug exists
-		$this->assertNotEquals(
-			array(
-				'0' => 'foo',
-				'1.0' => 'bar',
-				'1.1' => 'moon',
-				'1' => 'bar',
-			),
-			ArrayUtil::flatten($testArray)
+			'bar',
 		);
 
 		// what should be returned from the funciton
