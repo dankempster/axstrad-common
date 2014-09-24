@@ -45,7 +45,7 @@ final class ArrayUtil
     public static function decompilePath($path)
     {
         if (is_object($path) && !method_exists($path, '__toString')) {
-            throw new InvalidArgumentException("Expected scalar got ".VarUtil::toStr($path));
+            throw InvalidArgumentException::create('scalar', $path);
         }
         $path = (string) $path;
 

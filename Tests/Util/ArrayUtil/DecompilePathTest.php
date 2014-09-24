@@ -46,7 +46,8 @@ class DecompilePathTest extends \PHPUnit_Framework_TestCase
 	}
 
     /**
-     * @uses Axstrad\Common\Util\VarUtil
+     * @uses Axstrad\Common\Util\Debug
+     * @uses Axstrad\Common\Exception\InvalidArgumentException::create
      */
 	public function testExpectException()
 	{
