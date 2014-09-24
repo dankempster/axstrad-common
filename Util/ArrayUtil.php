@@ -24,60 +24,6 @@ use Axstrad\Common\Exception\InvalidArgumentException;
 final class ArrayUtil
 {
     /**
-     * Converts given $arrayPath to an array and attaches given value at the end of it.
-     *
-     * To create a multidimensional array
-     *
-     *     $result = ArrayUtil::attach('foo.bar', 'hello world');
-     *
-     *     // Outputs
-     *     array(
-     *         'foo' => array(
-     *             'bar' => 'hello world'
-     *         )
-     *     );
-     *
-     * To attach a value to an existing array
-     *
-     *     $startArray = array('php' => 'is awesome!');
-     *     $result = ArrayUtil::attach('foo.bar', 'hello world', $startArray);
-     *
-     *     // Outputs
-     *     array(
-     *         'php' => 'is awesome!',
-     *         'foo' => array(
-     *             'bar' => 'hello world'
-     *         )
-     *     );
-     *
-     * @param  string $arrayPath Given array path to convert and attach to. E.g. '[foo][bar]' or 'foo.bar'
-     * @param  mixed $value The value to attach
-     * @param  array $array The array to add entry $arrayPath=>$value too
-     * @return array The resulting array
-     * @uses   Axstrad\Common\Util\ArrayUtil::decompilePath()
-     * @uses   mergeRecursiveDistinct To merge array with the array created from _arrayPath_.
-     */
-    public static function attach($arrayPath, $value, $array = array())
-    {
-        $decompiledPath = self::decompilePath($arrayPath);
-
-        $newArray = array( );
-        foreach (array_reverse($decompiledPath) as $key => $pathKey) {
-            if ($key == 0) {
-                $newArray[$pathKey] = $value;
-            } else {
-                $newArray = array($pathKey => $newArray);
-            }
-        }
-
-        if (count($array) > 0) {
-            return self::mergeRecursiveDistinct($array, $newArray);
-        } else {
-            return $newArray;
-        }
-    }
-
-    /**
      * Decompiles an array path string into an array of the path elements.
      *
      * For example
