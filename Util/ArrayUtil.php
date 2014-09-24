@@ -21,7 +21,7 @@ use Axstrad\Common\Exception\InvalidArgumentException;
  *
  * A collection of array functions.
  */
-class ArrayUtil
+final class ArrayUtil
 {
     /**
      * Converts given $arrayPath to an array and attaches given value at the end of it.
