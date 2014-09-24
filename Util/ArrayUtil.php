@@ -183,53 +183,6 @@ final class ArrayUtil
     }
 
     /**
-     * Flattens a multidimensional array into a single dimensional array.
-     * If passed this array
-     *
-     *     array(
-     *          'key1' => 'value1',
-     *          'key2' => 'value2',
-     *          'key3' => array(
-     *              'subKey1'=>'subvalue1',
-     *              'subKey2'=>'subvalue2',
-     *          ),
-     *     )
-     *
-     * The following will be returned:
-     *
-     *      array(
-     *          'key1' => 'value1',
-     *          'key2' => 'value2',
-     *          'key3.subKey1' => 'subvalue1',
-     *          'key3.subKey2' => 'subvalue1',
-     *     )
-     *
-     * @param array $array Array
-     * @param string|null $prefix
-     * @param string $keyGlue The string to use to glue to keys toegther
-     * @return array
-     * @see    \Axstrad\Common\Util\ArrayUtil::raise(
-     */
-    public static function flatten(array $array, $prefix = null, $keyGlue = '.')
-    {
-        $keyGlue = (string) $keyGlue;
-        $result  = array();
-
-        foreach ($array as $key => $value) {
-            $newKey = $prefix===null ? (string) $key : $prefix.$keyGlue.$key;
-
-            if (is_array($value)) {
-                $value = self::flatten($value, $newKey, $keyGlue);
-                $result = array_merge($result, $value);
-            } else {
-                $result[$newKey] = $value;
-            }
-        }
-
-        return $result;
-    }
-
-    /**
      * Tests if $array is an associative array.
      *
      * @param  array   $array
