@@ -12,6 +12,16 @@
          bootstrap="./vendor/autoload.php"
 >
     <testsuites>
+        <testsuite name="Axstrad\Common\Util\ArrayUtil">
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/DecompilePathTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/MergeRecursiveDistinctTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/AttachTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/GetValueTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/FlattenTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/RaiseTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/ReindexTest.php</file>
+            <file>./tests/Axstrad/Test/Common/Util/ArrayUtil/IsAssociativeTest.php</file>
+        </testsuite>
     </testsuites>
 
     <logging>
