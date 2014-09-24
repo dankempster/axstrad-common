@@ -7,7 +7,8 @@ use Axstrad\Common\Util\Debug;
 /**
  * Axstrad\Common\Exception\InvalidArgumentException
  */
-class InvalidArgumentException extends \InvalidArgumentException
+class InvalidArgumentException extends \InvalidArgumentException implements
+    Exception
 {
     /**
      * Invalid Argument exception factory
