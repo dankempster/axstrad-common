@@ -250,28 +250,6 @@ class ArrayUtil
     }
 
     /**
-     * Reindex an array numerically starting with $indexStart.
-     *
-     * @param  array   $array      The array to be reindexed
-     * @param  integer $indexStart The first index
-     * @return array               The reindexed array
-     */
-    public static function reindex(array $array, $indexStart = 0)
-    {
-        if (!is_numeric($indexStart)) {
-            $indexStart = 0;
-        }
-
-        $return = array( );
-        foreach ($array as $value) {
-            $return[$indexStart] = $value;
-            $indexStart++;
-        }
-
-        return $return;
-    }
-
-    /**
      * Tests if $array is an associative array.
      *
      * @param  array   $array
