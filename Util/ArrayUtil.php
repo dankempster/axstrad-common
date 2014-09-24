@@ -230,21 +230,6 @@ final class ArrayUtil
     }
 
     /**
-     * @param  array  $array
-     * @return array
-     * @see    \Axstrad\Common\Util\ArrayUtil::flatten(
-     */
-    public static function raise(array $array)
-    {
-        $newArray = array();
-        foreach ($array as $key => $value) {
-            $newArray = self::attach($key, $value, $newArray);
-        }
-
-        return $newArray;
-    }
-
-    /**
      * Tests if $array is an associative array.
      *
      * @param  array   $array
