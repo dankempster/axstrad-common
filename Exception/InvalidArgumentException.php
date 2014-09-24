@@ -34,7 +34,7 @@ class InvalidArgumentException extends \InvalidArgumentException implements
         }
 
         if ($code !== null) {
-            $msgMsk = '[%4$s] ';
+            $msgMsk = '[%4$s] '.$msgMsk;
         }
 
         $class = get_called_class();
