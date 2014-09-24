@@ -101,23 +101,18 @@ class ArrayUtil
         if (is_object($path) && !method_exists($path, '__toString')) {
             throw new InvalidArgumentException("Expected scalar got ".VarUtil::toStr($path));
         }
-        $path      = (string) $path;
-        $splitChar = preg_match('/^[a-z0-9_]*\[.*\]$/i', $path) ? '[' : '.';
-        $endChar   = $splitChar == '[' ? ']' : '.';
+        $path = (string) $path;
 
-        // As long as we have more levels
-        $keys = array( );
-        while ($pos = strrpos($path, $splitChar)) {
-            // Get the next key in the path
-            $keys[] = trim(substr($path, $pos + 1), $endChar);
-
-            // Set the next search point in the path
-            $path = trim(substr($path, 0, $pos), '[].');
+        if (preg_match('/^[a-z0-9_]*\./i', $path)) {
+            return explode('.', $path);
         }
-        $keys[] = $path;
-        $return = array_reverse($keys);
-
-        return $return;
+        else {
+            $parts = array_filter(explode('[', $path), function(&$value) {
+                $value = trim($value, ']');
+                return !empty($value);
+            });
+            return array_values($parts);
+        }
     }
 
     /**
