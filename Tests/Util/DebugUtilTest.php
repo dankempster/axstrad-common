@@ -96,4 +96,20 @@ class DebugUtilTest extends \PHPUnit_Framework_TestCase
             Debug::summarise(null)
         );
     }
+
+    public function testDumpResetsXdebugVarDisplayMaxDepthSettingToOriginal()
+    {
+        if (!extension_loaded('xdebug')) {
+            $this->markTestSkipped('XDebug extension is not loaded/installed');
+        }
+
+        $original = ini_set('xdebug.var_display_max_depth', 5);
+        ob_start();
+        Debug::dump(new self, 2);
+        ob_end_clean();
+        $this->assertEquals(
+            5,
+            ini_set('xdebug.var_display_max_depth', $original)
+        );
+    }
 }

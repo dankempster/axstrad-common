@@ -19,6 +19,23 @@ class Debug
     );
 
     /**
+     */
+    public static function dump($var, $maxDepth = 2, $stripTags = true)
+    {
+        if (extension_loaded('xdebug')) {
+            $originalMaxDepth = ini_get('xdebug.var_display_max_depth');
+        }
+
+        $return = BaseDebug::dump($var, $maxDepth, $stripTags);
+
+        if (extension_loaded('xdebug')) {
+            ini_set('xdebug.var_display_max_depth', $originalMaxDepth);
+        }
+
+        return $return;
+    }
+
+    /**
      * @param mixed $var
      * @return string
      * @uses Doctrine\Common\Util\Debug::toString when $var is an object
