@@ -72,7 +72,7 @@ final class ArrayUtil
      * @return mixed
      * @uses   decompilePath To decompile $arrayPath.
      */
-    public static function getValue($arrayPath, array $array, $default = null)
+    public static function get($arrayPath, array $array, $default = null)
     {
         $pathKeys = self::decompilePath($arrayPath);
 

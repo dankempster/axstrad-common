@@ -18,7 +18,7 @@ use Axstrad\Common\Util\ArrayUtil;
 /**
  * Axstrad\Common\Tests\Util\ArrayUtil\GetValueTest
  *
- * @covers Axstrad\Common\Util\ArrayUtil::getValue
+ * @covers Axstrad\Common\Util\ArrayUtil::get
  * @group unittest
  * @uses Axstrad\Common\Util\ArrayUtil
  */
@@ -32,7 +32,7 @@ class GetValueTest extends \PHPUnit_Framework_TestCase
 		$array = array($key => 'bar');
 		$this->assertEquals(
 			$array[$key],
-			ArrayUtil::getValue($key, $array)
+			ArrayUtil::get($key, $array)
 		);
 	}
 
@@ -44,7 +44,7 @@ class GetValueTest extends \PHPUnit_Framework_TestCase
 		$array = array('one' => array('two'=>'three'));
 		$this->assertEquals(
 			'three',
-			ArrayUtil::getValue('one.two', $array)
+			ArrayUtil::get('one.two', $array)
 		);
 	}
 
@@ -53,7 +53,7 @@ class GetValueTest extends \PHPUnit_Framework_TestCase
 	public function testReturnsNullWhenKeyDoesntExist()
 	{
 		$this->assertNull(
-			ArrayUtil::getValue('one', array('foo'=>'bar'))
+			ArrayUtil::get('one', array('foo'=>'bar'))
 		);
 	}
 
@@ -62,7 +62,7 @@ class GetValueTest extends \PHPUnit_Framework_TestCase
 	public function testReturnsDefaultValueWhenKeyDoesntExist()
 	{
 		$this->assertFalse(
-			ArrayUtil::getValue('one', array('foo'=>'bar'), false)
+			ArrayUtil::get('one', array('foo'=>'bar'), false)
 		);
 	}
 }
