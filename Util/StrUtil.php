@@ -59,4 +59,21 @@ class StrUtil
 
         return $return;
     }
+
+    /**
+     * Truncats $string to $maxLength and appends '...'
+     *
+     * @param $string The string to truncate
+     * @param $maxLength Maximum character length (excluding ellipse) of returned string.
+     * @return string Returns $string unaltered if it's shorter then $maxLength.
+     *         Otherwise $string is returned truncated to $maxLength with '...'
+     *         appended.
+     */
+    public static function ellipse($string, $maxLength)
+    {
+        if (strlen($string) > $maxLength) {
+            return substr($string, 0, $maxLength).'...';
+        }
+        return $string;
+    }
 }
