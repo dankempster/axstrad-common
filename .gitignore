@@ -1,7 +1,0 @@
-vendor/
-
-# Build Artifacts
-cache.properties
-build/
-!build/php*.xml
-
