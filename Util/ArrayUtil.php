@@ -46,7 +46,7 @@ final class ArrayUtil
      */
     public static function decompilePath($path)
     {
-        if (is_object($path) && !method_exists($path, '__toString')) {
+        if (is_object($path) && ! method_exists($path, '__toString')) {
             throw InvalidArgumentException::create('scalar', $path);
         }
         $path = (string) $path;
@@ -55,9 +55,9 @@ final class ArrayUtil
             return explode('.', $path);
         }
         else {
-            $parts = array_filter(explode('[', $path), function(&$value) {
+            $parts = array_filter(explode('[', $path), function (&$value) {
                 $value = trim($value, ']');
-                return !empty($value);
+                return ! empty($value);
             });
             return array_values($parts);
         }
@@ -80,7 +80,7 @@ final class ArrayUtil
 
         $_a = $array;
         foreach ($pathKeys as $key) {
-            if (!isset($_a[$key])) {
+            if ( ! isset($_a[$key])) {
                 return $default;
             } else {
                 $_a = $_a[$key];
@@ -103,7 +103,7 @@ final class ArrayUtil
     public static function mergeRecursiveDistinct()
     {
         $prepare = function ($arg) {
-            return !is_array($arg) ? array($arg) : $arg;
+            return ! is_array($arg) ? array($arg) : $arg;
         };
         $arguments = func_get_args();
         $base = $prepare(array_shift($arguments));
@@ -113,15 +113,15 @@ final class ArrayUtil
             $argument = $prepare($argument);
 
             foreach ($argument as $key => $value) {
-                if (!is_numeric($key)) {
-                    if (!array_key_exists($key, $base)
-                        || (!is_array($value) && !is_array($base[$key]))
+                if ( ! is_numeric($key)) {
+                    if ( ! array_key_exists($key, $base)
+                        || ( ! is_array($value) && ! is_array($base[$key]))
                     ) {
                         $base[$key] = $value;
                     } else {
                         $base[$key] = self::mergeRecursiveDistinct($base[$key], $value);
                     }
-                } elseif (!in_array($value, $base)) {
+                } elseif ( ! in_array($value, $base)) {
                     $base[] = $value;
                 }
             }
