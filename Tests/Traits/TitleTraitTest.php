@@ -13,6 +13,8 @@
  */
 namespace Axstrad\Common\Tests\Traits;
 
+use Axstrad\Component\Test\TraitTestCase;
+
 
 /**
  * Axstrad\Common\Tests\Traits\TitleTraitTest
@@ -22,8 +24,10 @@ namespace Axstrad\Common\Tests\Traits;
  * @group unittest
  * @uses Axstrad\Common\Traits\TitleTrait
  */
-class TitleTraitTest extends \PHPUnit_Framework_TestCase
+class TitleTraitTest extends TraitTestCase
 {
+    protected $trait = 'Axstrad\Common\Traits\NameTrait';
+
     /**
      */
     public function testTitleTrait()

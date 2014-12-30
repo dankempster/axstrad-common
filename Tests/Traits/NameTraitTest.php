@@ -13,6 +13,8 @@
  */
 namespace Axstrad\Common\Tests\Traits;
 
+use Axstrad\Component\Test\TraitTestCase;
+
 
 /**
  * Axstrad\Common\Tests\Traits\NameTraitTest
@@ -22,14 +24,14 @@ namespace Axstrad\Common\Tests\Traits;
  * @group unittest
  * @uses Axstrad\Common\Traits\NameTrait
  */
-class NameTraitTest extends \PHPUnit_Framework_TestCase
+class NameTraitTest extends TraitTestCase
 {
+    protected $trait = 'Axstrad\Common\Traits\NameTrait';
+
     /**
      */
     public function testNameTrait()
     {
-        $this->fixture = $this->getMockForTrait('Axstrad\Common\Traits\NameTrait');
-
         $this->assertNull(
             $this->fixture->getName(),
             '$name doesn\'t start as NULL'
