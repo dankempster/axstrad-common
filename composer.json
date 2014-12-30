@@ -3,7 +3,7 @@
     "description": "Common classes used throughout Axstrad projects",
     "type": "library",
     "keywords": [],
-    "license": "GPL-2.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dan Kempster",
