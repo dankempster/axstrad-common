@@ -13,6 +13,8 @@
  */
 namespace Axstrad\Common\Tests\Traits;
 
+use Axstrad\Component\Test\TraitTestCase;
+
 
 /**
  * Axstrad\Common\Tests\Traits\NullableTitleTraitTest
@@ -22,8 +24,10 @@ namespace Axstrad\Common\Tests\Traits;
  * @group unittest
  * @uses Axstrad\Common\Traits\NullableTitleTrait
  */
-class NullableTitleTraitTest extends \PHPUnit_Framework_TestCase
+class NullableTitleTraitTest extends TraitTestCase
 {
+    protected $trait = 'Axstrad\Common\Traits\NameTrait';
+
     /**
      * @depends Axstrad\Common\Tests\Traits\TitleTraitTest::testTitleTrait
      */

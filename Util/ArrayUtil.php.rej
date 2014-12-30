@@ -1,0 +1,27 @@
+--- /dev/null
++++ /dev/null
+@@ -82,7 +82,8 @@
+             if (!isset($_a[$key])) {
+                 return $default;
+-            } else {
++            }
++            else {
+                 $_a = $_a[$key];
+             }
+         }
+ 
+@@ -118,10 +119,12 @@
+                     ) {
+                         $base[$key] = $value;
+-                    } else {
++                    }
++                    else {
+                         $base[$key] = self::mergeRecursiveDistinct($base[$key], $value);
+                     }
+-                } elseif (!in_array($value, $base)) {
++                }
++                elseif (!in_array($value, $base)) {
+                     $base[] = $value;
+                 }
+             }
+ 
