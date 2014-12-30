@@ -82,7 +82,8 @@ final class ArrayUtil
         foreach ($pathKeys as $key) {
             if ( ! isset($_a[$key])) {
                 return $default;
-            } else {
+            }
+            else {
                 $_a = $_a[$key];
             }
         }
@@ -118,10 +119,12 @@ final class ArrayUtil
                         || ( ! is_array($value) && ! is_array($base[$key]))
                     ) {
                         $base[$key] = $value;
-                    } else {
+                    }
+                    else {
                         $base[$key] = self::mergeRecursiveDistinct($base[$key], $value);
                     }
-                } elseif ( ! in_array($value, $base)) {
+                }
+                elseif ( ! in_array($value, $base)) {
                     $base[] = $value;
                 }
             }
