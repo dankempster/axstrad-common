@@ -143,4 +143,20 @@ final class ArrayUtil
     {
         return count(array_filter(array_keys($array), 'is_string')) > 0;
     }
+
+    /**
+     * Converts an array to an object
+     *
+     * @param  array  $array
+     * @return stdClass
+     */
+    public static function toObject($array)
+    {
+        if (is_array($array)) {
+            return (object) array_map(__METHOD__, $array);
+        }
+        else {
+            return $array;
+        }
+    }
 }
