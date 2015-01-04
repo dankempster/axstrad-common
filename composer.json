@@ -19,7 +19,7 @@
     },
 
     "require-dev": {
-        "axstrad/test": "0.1.*",
+        "axstrad/test": "~0.1.0",
         "phpunit/phpunit": "~4.1",
         "satooshi/php-coveralls": "dev-master"
     },
@@ -31,7 +31,6 @@
     },
 
     "minimum-stability": "dev",
-    "prefer-stable": true,
 
     "extra": {
         "branch-alias": {
