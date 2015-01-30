@@ -20,7 +20,7 @@
 
     "require-dev": {
         "axstrad/test": "~0.1.0",
-        "phpunit/phpunit": "~4.1",
+        "phpunit/phpunit": "~4.1@stable",
         "satooshi/php-coveralls": "dev-master"
     },
 
