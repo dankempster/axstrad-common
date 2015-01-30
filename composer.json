@@ -26,7 +26,8 @@
 
     "autoload": {
         "psr-4": {
-            "Axstrad\\Common\\": ""
+            "Axstrad\\Common\\Tests\\": "tests/",
+            "Axstrad\\Common\\": "src/"
         }
     },
 

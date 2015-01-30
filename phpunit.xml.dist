@@ -10,14 +10,14 @@
 
     <testsuites>
         <testsuite name="Axstrad\Common">
-            <directory suffix="Test.php">./Tests/Exception</directory>
+            <directory suffix="Test.php">./tests/Exception</directory>
 
-            <file>./Tests/Traits/NameTraitTest.php</file>
-            <file>./Tests/Traits/NullableNameTraitTest.php</file>
-            <file>./Tests/Traits/TitleTraitTest.php</file>
-            <file>./Tests/Traits/NullableTitleTraitTest.php</file>
+            <file>./tests/Traits/NameTraitTest.php</file>
+            <file>./tests/Traits/NullableNameTraitTest.php</file>
+            <file>./tests/Traits/TitleTraitTest.php</file>
+            <file>./tests/Traits/NullableTitleTraitTest.php</file>
 
-            <directory suffix="Test.php">./Tests/Util</directory>
+            <directory suffix="Test.php">./tests/Util</directory>
         </testsuite>
     </testsuites>
 
@@ -39,7 +39,7 @@
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./</directory>
             <exclude>
-                <directory>./Tests</directory>
+                <directory>./tests</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
