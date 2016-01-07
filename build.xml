@@ -9,7 +9,7 @@
     <property name="phpdox"  value="phpdox"/>
     <property name="phploc"  value="phploc"/>
     <property name="phpmd"   value="phpmd"/>
-    <property name="phpunit" value="${basedir}/bin/phpunit"/>
+    <property name="phpunit" value="${basedir}/vendor/phpunit/phpunit/phpunit"/>
 
     <!--<property name="builddir" value="${basedir}/build"/>-->
     <property name="composer" value="composer"/>
