@@ -8,8 +8,8 @@ env:
   - LOWEST=0
 before_script:
   - composer self-update
-  - if [[ $LOWEST = 0 ]]; then composer update --prefer-dist; fi
-  - if [[ $LOWEST = 1 ]]; then composer update --prefer-dist --prefer-lowest; fi
+  - if [[ $LOWEST = 0 ]]; then composer require satooshi/php-coveralls --prefer-dist; fi
+  - if [[ $LOWEST = 1 ]]; then composer require satooshi/php-coveralls --prefer-dist --prefer-lowest; fi
 script:
   # - php ./vendor/phpunit/phpunit/phpunit
   - php ./vendor/phpunit/phpunit/phpunit --coverage-clover=build/logs/clover.xml
