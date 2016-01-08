@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -9,11 +10,11 @@
  *
  * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
+
 namespace Axstrad\Common\Util;
 
 use Axstrad\Common\Util\ArrayUtil;
 use Doctrine\Common\Util\Debug as BaseDebug;
-
 
 /**
  * Axstrad\Common\Util\Debug

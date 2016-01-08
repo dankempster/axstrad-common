@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -12,43 +13,35 @@
 
 namespace Axstrad\Common\Traits;
 
+
 /**
- * Axstrad\Common\Traits\TitleTrait
+ * Axstrad\Common\Traits\NullableNameTrait
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Common
  * @subpackage Traits
  */
-trait TitleTrait
+trait NullableNameTrait
 {
-    /**
-     * @var string
-     */
-    protected $title;
+    use NameTrait;
 
 
     /**
-     * Get title
+     * Set name
      *
-     * @return string
-     * @see setTitle
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
+     * @param null|string $name
      * @return self
      * @see getTitle
      */
-    public function setTitle($title)
+    public function setName($name = null)
     {
-        $this->title = (string) $title;
+        if ($name === null) {
+            $this->name = null;
+        }
+        else {
+            $this->name = (string) $name;
+        }
         return $this;
     }
 }

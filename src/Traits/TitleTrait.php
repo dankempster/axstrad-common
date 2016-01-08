@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -13,42 +14,42 @@
 namespace Axstrad\Common\Traits;
 
 /**
- * Axstrad\Common\Traits\NameTrait
+ * Axstrad\Common\Traits\TitleTrait
  *
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @license MIT
  * @package Axstrad/Common
  * @subpackage Traits
  */
-trait NameTrait
+trait TitleTrait
 {
     /**
      * @var string
      */
-    protected $name;
+    protected $title;
 
 
     /**
-     * Get name
+     * Get title
      *
      * @return string
-     * @see setName
+     * @see setTitle
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
-     * Set name
+     * Set title
      *
-     * @param  string $name
+     * @param string $title
      * @return self
-     * @see getName
+     * @see getTitle
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = (string) $name;
+        $this->title = (string) $title;
         return $this;
     }
 }

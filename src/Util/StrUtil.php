@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the Axstrad library.
  *
@@ -10,7 +11,9 @@
  * @author Dan Kempster <dev@dankempster.co.uk>
  * @package Axstrad\Common
  * @subpackage Utillities
+ * @copyright 2014-2015 Dan Kempster <dev@dankempster.co.uk>
  */
+
 namespace Axstrad\Common\Util;
 
 
