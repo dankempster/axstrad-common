@@ -6,7 +6,8 @@ php:
   - 7.0
   - 7.1
 env:
-  - LOWEST=0
+  - DEPS="stable"
+  - DEPS="dev"
 
 cache:
   directories:
@@ -14,9 +15,9 @@ cache:
 
 # Set up the project for testing
 before_script:
-  - composer self-update
-  - if [[ $LOWEST = 0 ]]; then composer require satooshi/php-coveralls --prefer-dist; fi
-  - if [[ $LOWEST = 1 ]]; then composer require satooshi/php-coveralls --prefer-dist --prefer-lowest; fi
+  - if [[ $DEPS = 'lowest' ]]; then composer update -n --prefer-dist --prefer-lowest; fi
+  - if [[ $DEPS = 'stable' ]]; then composer update -n --prefer-dist --prefer-stable; fi
+  - if [[ $DEPS = 'dev' ]]; then composer update -n --prefer-dist; fi
 
 # Run Tests
 script:
@@ -35,7 +36,9 @@ matrix:
   fast_finish: true
   include:
     - php: 5.4
-      env: LOWEST=1
+      env: DEPS="lowest"
+    - php: 7.0
+      env: DEPS="lowest"
 
 notifications:
   email:
